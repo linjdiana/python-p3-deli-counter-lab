@@ -1,22 +1,28 @@
 katz_deli = []
 
-def line(list):
-    if len(list) == 0: 
-        print("The line is currently empty.")
+def line(names):
+    if len(names) == 0:
+        string = "The line is currently empty."
     else:
         string = "The line is currently:"
-        for index, name in enumerate(list):
-            string += f" {index + 1}. {name}"
-        print(string)
+        i = 0
+        for name in names:
+            i += 1
+            string += f" {i}. {name}"
+    print(string) 
 
-def take_a_number(list, name):
-    list.append(name)
-    print(f"Welcome, {name}. You are number {len(list)} in line.")
+line(["A", "Brad"])
 
+def take_a_number(names, name):
+    names.append(name)
+    print(f"Welcome, {name}. You are number {len(names)} in line.")
 
-def now_serving(list):
-    if len(list) == 0:
+# take_a_number(["Ada", "Grace"], "Ada")
+
+def now_serving(names):
+    if len(names) == 0:
         print("There is nobody waiting to be served!")
-    else: 
-        print(f"Currently serving {list[0]}.")
-        list.pop(0)
+    else:
+        print(f"Currently serving {names[0]}.")
+        names.pop(0)
+    
